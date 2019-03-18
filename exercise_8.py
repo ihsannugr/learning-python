@@ -2,11 +2,11 @@
 
 #Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)
 
-playgame = "yes"
+playgame = True
 
-print("Welcome to Rock-Paper-Scissor Game.\n")
+while playgame == True :
 
-while playgame == "yes" :
+    print("Welcome to Rock-Paper-Scissor Game.\n")
 
     player_1 = str(input("Player 1 (rock / scissor / paper) : "))
     player_2 = str(input("Player 2 (rock / scissor / paper) : "))
@@ -42,7 +42,12 @@ while playgame == "yes" :
         print("\nWrong choice, Player 1! Please choose between rock / scissor / paper\n")
     
 
-    playgame = str(input("Do you want to play again? (yes/no)\n"))       
-    if playgame == "no" :
+    confirm = str(input("Do you want to play again? (yes/no)\n"))       
+    if confirm == "no" :
+        playgame = False
         print("\nGame Over.\n")
         break
+    elif confirm == "yes" :
+        print("\nLet's play again.\n")
+    else :
+        print("\nWrong choice, but i guess you want to play again. Choose yes/no next time..\n")
